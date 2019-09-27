@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf8">
+  <title>Minha primeira pagina HTML</title>
+  <script>
+    'use strict'; // Modo chato do JS - não deixa usar variavel sem declarar
+
+    let vet1 = [];
+    let vet2 = [];
+    let vet3 = [];
+    let vet4 = [];
+    let Num = 100;
+
+    function gerar() {
+      for (let i = 0; i < Num; i++) {
+        vet1.push(Math.floor((Math.random() * 100) + 1));
+        vet2.push(vet1[i]);
+        vet3.push(vet1[i]);
+        vet4.push(vet1[i]);
+      }
+    }
+    gerar();
+
+    document.write('Numeros Gerados' + '<br>');
+    for (let i = 0; i < vet1.length; i++) {
+      document.write(vet1[i] + '<br>');
+    }
+    document.write('<br>');
+
+    function BubbleSort(vet) {
+      let x = vet.length;
+
+      do {
+        for (let i = 0; i < x - 1; i++) {
+          if (vet[i] > vet[i + 1]) {
+            let aux = vet[i];
+            vet[i] = vet[i + 1];
+            vet[i + 1] = aux;
+          }
+        }
+        x--;
+      } while (x > 1);
+    }
+
+    document.write('BubbleSort' + '<br>');
+
+    console.time('BubbleSort');
+    BubbleSort(vet1);
+    console.timeEnd('BubbleSort');
+
+    for (let i = 0; i < vet1.length; i++) [
+      document.write(vet1[i] + ",")
+    ]
+    document.write('<br>' + '<br>');
+
+    function SelecaoDireta(vet) {
+
+      for (let i = 0; i < vet.length - 1; i++) {
+        let min = i;
+
+        for (let j = i; j < vet.length; j++) {
+          if (vet[j] < vet[min]) {
+            min = j;
+          }
+        }
+        if (min != i) {
+          let aux = vet[i];
+          vet[i] = vet[min];
+          vet[min] = aux;
+        }
+      }
+    }
+
+    document.write('SeleçãoDireta' + '<br>');
+
+    console.time('SelecaoDireta');
+    SelecaoDireta(vet2);
+    console.timeEnd('SelecaoDireta');
+
+    for (let i = 0; i < vet2.length; i++) [
+      document.write(vet2[i] + ",")
+    ]
+    document.write('<br>' + '<br>');
+
+    function InsercaoDireta(vet) {
+      let x = vet.length;
+
+      for (let i = 1; i < x; i++) {
+
+        for (let j = 0; j < i; j++) {
+          if (vet[i] < vet[j]) {
+            let aux = vet[i];
+            for (let k = i; k > j; k--) {
+              vet[k] = vet[k - 1];
+            }
+            vet[j] = aux;
+          }
+        }
+      }
+    }
+
+    document.write('InserçãoDireta' + '<br>');
+
+    console.time('InsercaoDireta');
+    InsercaoDireta(vet3);
+    console.timeEnd('InsercaoDireta');
+
+    for (let i = 0; i < vet3.length; i++) [
+      document.write(vet3[i] + ",")
+    ]
+
+    document.write('<br>' + '<br>');
+
+    function QuickSort(array, left, right) {
+      var i = left;
+      var j = right;
+      var tmp;
+      var pivotidx = (left + right) / 2;
+      var pivot = parseInt(array[pivotidx.toFixed()]);
+      // PARTIÇÃO
+      while (i <= j) {
+        while (parseInt(array[i]) < pivot)
+          i++;
+        while (parseInt(array[j]) > pivot)
+          j--;
+        if (i <= j) {
+          tmp = array[i];
+          array[i] = array[j];
+          array[j] = tmp;
+          i++;
+          j--;
+        }
+      }
+      // RECURSÃO
+      if (left < j)
+        QuickSort(array, left, j);
+      if (i < right)
+        QuickSort(array, i, right);
+      return array;
+    }
+
+    //document.write(quicksort(vet4, 0, vet4.length - 1));
+    document.write('QuickSort' + '<br>');
+
+    console.time('QuickSort');
+    QuickSort(vet4, 0, vet4.length - 1);
+    console.timeEnd('QuickSort');
+
+    for (let i = 0; i < vet4.length; i++) [
+      document.write(vet4[i] + ",")
+    ]
+
+
+  </script>
+</head>
+
+<body>
+  <h1></h1>
+  <p></p>
+
+</body>
+
+</html>

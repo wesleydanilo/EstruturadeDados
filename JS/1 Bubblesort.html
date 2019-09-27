@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf8">
+        <title>Minha primeira pagina HTML</title>
+        <script>
+            'use strict'; // Modo chato do JS - não deixa usar variavel sem declarar
+
+
+            let vet1 = [10,20,12,5,8,15];
+
+            function BubbleSort (vet){
+                let x = vet.length;
+                console.log(x);
+
+                do{
+                    for (let i = 0; i < x - 1; i++){
+                        if (vet[i] > vet[i+1]){
+                            let aux = vet[i];
+                            vet[i] = vet[i+1];
+                            vet[i+1] = aux;
+                        }
+                    }
+                    x--;
+                }while (x > 1);
+            }
+
+            document.write('BubbleSort' + '<br>');
+
+            console.time('BubbleSort');
+            BubbleSort(vet1);
+            console.timeEnd('BubbleSort');
+
+            for (let i = 0; i < vet1.length; i++)[
+              document.write(vet1[i] + ",")
+            ]
+            document.write('<br>' + '<br>');
+
+        </script>
+    </head>
+
+    <body>
+        <h1>Titulo</h1>
+        <p>Isto é um parágrafo</p>
+
+    </body>
+</html>

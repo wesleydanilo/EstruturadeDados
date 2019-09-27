@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+
+            //let vetor = [7, -3, 7, 20, 7, -3, -10];
+			let vetor = [-100, 35, -3, 2, 7, 10, -5, -3, 41, 10, -3];
+			//let vetor = [10, 20, 10, 5, 5, 10];
+			document.write("Vetor: " + vetor + "<br/>Qdt de elementos: " + vetor.length);
+			
+				
+			function moda(vt){
+				let j, k, l;
+				let existe, maior = 0;
+				let cont = [];
+				for(l=0; l<vt.length; l++){
+					cont[l] = 0;
+				}
+				let numero = [];
+				
+				for(j=0; j<vt.length; j++){
+					for(k=0; k<numero.length; k++){
+						if(vt[j] == numero[k]){
+							existe = true;
+							break;
+						}else{
+							existe = false;
+						}
+					}
+					if(existe){
+						cont[k]++;
+						if(cont[k] > maior){
+							maior = cont[k];
+						}
+					} else {
+						numero[j] = vt[j];
+						cont[j] = 1;
+					}
+				}
+				let repete = 0, indexMaior;
+				for(j=0; j<cont.length; j++){
+					if(cont[j] == maior){
+						repete++;
+						indexMaior = j;
+					}
+				}
+				if(repete == 1){
+					document.write("<br/><br/>Moda: " + vt[indexMaior]);
+				} else {				
+					document.write("<br/><br/>Moda: Não existe MODA");
+				}
+			}
+						
+			moda(vetor);
+			
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

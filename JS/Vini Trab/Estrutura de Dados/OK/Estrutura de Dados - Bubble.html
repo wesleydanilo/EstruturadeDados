@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+
+			let vetor = [25, 57, 48, 37, 12, 92, 86, 33];
+						
+			function bubble(vt){
+				let pos = 0;
+				let aux;
+				let cont = 1;
+				
+				do{
+					for(let i=0; i<vt.length-pos-1; i++){
+						if(vt[i] > vt[i+1]){
+							aux = vt[i];
+							vt[i] = vt[i+1];
+							vt[i+1] = aux;
+						}
+						cont++;
+					}
+					pos++;				
+				}while(vt.length > pos);			
+			}
+						
+			bubble(vetor);
+			
+			console.time('bubble');
+            document.write('BubbleSort' + '<br>');
+            document.write(bubble(vetor));
+            document.write('<br>' + '<br>');
+            console.timeEnd('bubble');
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

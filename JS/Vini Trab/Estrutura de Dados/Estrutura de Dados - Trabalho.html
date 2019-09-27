@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Trabalho Estrutura de Dados</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+			let vetor = [];
+			let vetor1 = [];
+			let vetor2 = [];
+			let vetor3 = [];
+			let start, time;
+			
+			for(let i=0; i<10000; i++){
+				vetor[i] = Math.floor(Math.random() * 9999) + 1;
+			}
+			vetor1 = vetor.slice();
+			vetor2 = vetor.slice();
+			vetor3 = vetor.slice();
+			
+			function bubble(vt){
+				let pos = 0;
+				let aux;
+				
+				do{
+					for(let i=0; i<vt.length-pos-1; i++){
+						if(vt[i] > vt[i+1]){
+							aux = vt[i];
+							vt[i] = vt[i+1];
+							vt[i+1] = aux;
+						}
+					}
+					pos++;				
+				}while(vt.length > pos);			
+			}
+			
+			start = new Date();			
+			bubble(vetor1);
+			time = new Date() - start;
+			document.write("Vetor1: Bubble ..OK! in "+time+" milisecs<br/>");
+			
+			function selecao(vt){
+				let menor, aux;
+				for(let i=0; i<vt.length-1; i++){
+					menor = i;
+					for(let j=i; j<vt.length; j++){
+						if(vt[j] < vt[menor]){
+							menor = j;
+						}
+					}
+					aux = vt[i];
+					vt[i] = vt[menor];
+					vt[menor] = aux;
+				}
+			}
+			
+			start = new Date();
+			selecao(vetor2);
+			time = new Date() - start;
+			document.write("Vetor2: Seleção ..OK! in "+time+" milisecs<br/>");
+			
+			function insercao(vt){
+				let aux;
+				
+				for(let i=1; i<vt.length; i++){
+					for(let j=0; j<i; j++){
+						if(vt[i] < vt[j]){
+							aux = vt[i];
+							for(let k=i; k>j; k--){
+								vt[k] = vt[k-1];
+							}
+							vt[j] = aux;
+						}
+					}
+				}
+			}
+			
+			start = new Date();
+			insercao(vetor3);
+			time = new Date() - start;
+			document.write("Vetor3: Inserção ..OK! in "+time+" milisecs<br/>");
+			
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

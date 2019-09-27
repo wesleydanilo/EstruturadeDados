@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercicios</title>
+		<!--
+		<style type="text/css">
+			body { text-align: center; }
+			h1 { font-size: 50px; }
+		</style>
+		-->
+        <script>
+            'use strict'; //declare para usar alguma variável
+			let vet = [5, 10, 25, 33, 45, 60, 81, 90, 95];
+			
+			function buscaBinaria(vetor, pInicial, pFinal, elemento){
+				
+				let inicio = pInicial;
+				let fim = pFinal;
+				let pivoidx = (inicio + fim) / 2;
+				let pivoInteiro = parseInt(pivoidx.toFixed());
+				let pivoValor = parseInt(vetor[pivoInteiro]);
+				
+				if(pivoValor == elemento){
+					return pivoInteiro;
+				} else if (elemento > pivoValor){
+					return buscaBinaria(vetor, pivoInteiro+1, fim, elemento);				
+				} else if (elemento < pivoValor){
+					return buscaBinaria(vetor, inicio, pivoInteiro-1, elemento);
+				} else {
+					return "Não encontrado!";
+				}
+			}
+			
+			let teste = buscaBinaria(vet, 0, vet.length-1, 81);
+			document.write(teste);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

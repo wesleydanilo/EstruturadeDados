@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf8">
+  <title>Minha primeira pagina HTML</title>
+  <script>
+    'use strict'; // Modo chato do JS - não deixa usar variavel sem declarar
+
+    let num = [10, 20, 12, 5, 8, 15];
+
+
+/*     function quicksort(array, left, right) {
+      var i = left;
+      var j = right;
+      var tmp;
+      var pivotidx = (left + right) / 2;
+      var pivot = parseInt(array[pivotidx.toFixed()]);
+      // PARTIÇÃO
+      while (i <= j) {
+        while (parseInt(array[i]) < pivot)
+          i++;
+        while (parseInt(array[j]) > pivot)
+          j--;
+        if (i <= j) {
+          tmp = array[i];
+          array[i] = array[j];
+          array[j] = tmp;
+          i++;
+          j--;
+        }
+      }
+      // RECURSÃO
+      if (left < j)
+        quicksort(array, left, j);
+      if (i < right)
+        quicksort(array, i, right);
+      return array;
+    }
+ */
+   
+      //colocar na chamada (nome vetor, inicio vetor(0), final vetor(.lenght - 1)) 
+      //function quicksort(VETOR, 0, VETOR.lenght - 1) {
+      function quicksort(array, left, right) {
+          var i = left;
+          var j = right;
+          var tmp;
+          var pivotidx = (left + right) / 2;
+          var pivot = parseInt(array[pivotidx.toFixed()]);
+          // PARTIÇÃO
+          while (i <= j) {
+            while (parseInt(array[i]) < pivot)
+              i++;
+            while (parseInt(array[j]) > pivot)
+              j--;
+            if (i <= j) {
+              tmp = array[i];
+              array[i] = array[j];
+              array[j] = tmp;
+              i++;
+              j--;
+            }
+          }
+          // RECURSÃO
+          if (left < j)
+            quicksort(array, left, j);
+          if (i < right)
+            quicksort(array, i, right);
+          return array;
+        }
+    
+    document.write(quicksort(num, 0, num.length - 1));
+
+  </script>
+</head>
+
+<body>
+  <h1>Titulo</h1>
+  <p>Isto é um parágrafo</p>
+
+</body>
+
+</html>

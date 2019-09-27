@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8" />
+    <title>Exercício BubleSort</title>
+    <script>
+        
+        let vet1 = [];
+        let vet2 = [];
+        let vet3 = [];
+
+       function geracao() {
+            for (let i = 0; i < 10; i++) {
+                vet1.push(Math.floor((Math.random() * 200) + 1));
+                vet2.push(vet1[i]);
+                vet3.push(vet1[i]);
+            }
+       }
+
+       geracao();
+
+        function bubbleSort(vet){
+            var n = vet.length;
+                do {
+                    for (var i = 0; i < n; i++){
+                        if (vet[i] > vet[i+1]){
+                            var temp = vet[i];
+                            vet[i] = vet[i+1];
+                            vet[i+1] = temp;
+                        }
+                    }
+                    n--;
+                } while (n > 1);
+            return vet;
+        }
+        console.time('Bublesort')
+        document.write(bubbleSort(vet1));
+        document.write(' - Bublesort' + '<br>');
+        console.timeEnd('Bublesort');
+        
+
+        function selecaoDireta(vet) {
+            let menor, aux;
+            for (let i = 0; i < vet.length - 1; i++) {
+                menor = i;
+                for (let j = i + 1; j < vet.length; j++) {
+                    if (vet[j] < vet[menor]) {
+                        menor = j;
+                    }
+                }
+                aux = vet[i];
+                vet[i] = vet[menor];
+                vet[menor] = aux;
+            }
+            return vet;
+        }
+
+        console.time('Seleção Direta')
+        document.write(selecaoDireta(vet2));
+        document.write(' - Seleção Direta' + '<br>');
+        console.timeEnd('Seleção Direta');
+
+
+        function insercaoDireta(vet) {
+            let i, x, k, j;
+ 
+            for(i = 1; i < vet.length; i++) {
+                x = vet[i];
+                k = 0;
+                j = i - 1;
+                while(j >= 0 && k == 0) {
+                    if(x < vet[j]) {
+                        vet[j + 1] = vet[j];
+                        j--;
+                    } else k = j + 1;
+                }
+                vet[k] = x;
+            }
+            return vet;
+        }
+
+        console.time('Inserção Direta')
+        document.write(insercaoDireta(vet3));
+        document.write(' - Inserção Direta');
+        console.timeEnd('Inserção Direta');
+
+    </script>
+</head>
+
+</html>

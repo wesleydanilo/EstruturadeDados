@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+
+            /*
+            alert('Hello, World!');
+            document.write('Hello, World');
+            
+            
+            let nome;
+            nome = prompt('Qual o seu nome?');
+            alert('Olá, ' + nome + '!');
+            */
+
+            //let vetor = [7, -3, 7, 20, 7, -3, -10];
+			//let vetor = [-100, 35, 58, 2, 7, 10, -5, -30, 41, 10, -3];
+			let vetor = [10, 20, 10, 5, 5]
+			document.write("Vetor: " + vetor + "<br/>Qdt de elementos: " + vetor.length);
+			
+				
+			function moda(vt){
+				let j;
+				let moda = [];
+				let cont = [];
+				let maiorIndex = 0;
+				let numero;
+				
+				for(j=0; j<vt.length; j++){
+					numero = vt[j];
+					cont[numero] = (cont[numero] || 0) + 1;
+					if(cont[numero] > maiorIndex){
+						maiorIndex = cont[numero];
+					}
+				}
+				console.log(cont);
+				for(j in cont){
+					if(cont.hasOwnProperty(j)){
+						if(cont[j] === maiorIndex){
+							moda.push(Number(j));
+						}
+					}
+				}
+				if(moda.length != 1){
+					document.write("<br/>Moda do vetor: Não existe");
+				} else {
+					document.write("<br/>Moda do vetor: " + moda);
+				}				
+			}
+						
+			
+			let i;
+			let media = 0;
+			let maior, aux;
+			let impar = [];
+			let par = [];
+			
+			for(i=0; i < vetor.length; i++){
+				media += vetor[i];
+				aux = vetor[i]
+				if(i == 0){
+					maior = aux;
+				}else{
+					if(aux > maior){
+						maior = aux;
+					}
+				}
+				if(vetor[i] % 2 == 0){
+					par.push(vetor[i]);
+				}else{
+					impar.push(vetor[i]);
+				}
+			}
+			
+			
+			document.write("<br/><br/><br/>Média do vetor: " + media/vetor.length);
+			document.write("<br/>Maior nº do vetor: " + maior);
+			document.write("<br/>Vetor de nº Par: " + par);
+			document.write("<br/>Vetor de nº Impar: " + impar);
+			moda(vetor);
+			
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

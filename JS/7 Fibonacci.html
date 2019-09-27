@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf8">
+  <title></title>
+  <script>
+    'use strict'; // Modo chato do JS - não deixa usar variavel sem declarar
+
+    function fibonacci(num){
+      if (num <= 0){
+        return "ERRO!";
+      } else if (num == 1 || num ==2){
+          return 1;
+        } else {
+          return (fibonacci( num - 1) + fibonacci( num - 2));
+        }
+    }
+
+    let num = prompt("Número: ");
+    var result = fibonacci(num);
+    document.write("Fibonacci de " + num + " é: " + result);
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <h1></h1>
+  <p></p>
+
+</body>
+
+</html>

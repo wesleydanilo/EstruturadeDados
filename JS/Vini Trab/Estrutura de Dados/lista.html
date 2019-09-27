@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Lista</title>
+        <script>
+            'use strict'; //declare para usar alguma variável
+			function LinkedList(){
+				let Node = function(element){
+					this.element = element;
+					this.next = null;
+				};
+				let length = 0;
+				let head = null;
+				
+				this.append = function(element){
+					let node = new Node(element), current;
+					if(head === null){
+						head = node;
+					}else{
+						current = head;
+						while(current.next){
+							current = current.next;
+						}
+						current.next = node;
+					}
+					length++;
+				};
+				
+				this.size = function(){
+					return length;
+				};
+				
+				this.escreve = function(){
+					let current;
+					if(head === null){
+						document.write("Lista vazia!<br/>");
+					}else{
+						current = head;
+						while(current){
+							document.write(current.element + (current.next ? " -> " : "<br/>"));
+							current = current.next;
+						}
+					}
+				};
+				
+				this.removeInicial = function(){
+					let x;
+					if(head === null){
+						document.write("Lista vazia!<br/>");
+					}else{
+						x = head.element;
+						head = head.next;
+					}
+					length--;
+					return x;
+				};
+				
+				this.insereInicial = function(element){
+					let node = new Node(element);
+					if(head === null){
+						head = node;
+					}else{
+						node.next = head;
+						head = node;
+					}
+					length++;
+				};
+				
+				this.busca = function(x){
+					let current, index = 1;
+					if(head === null){
+						document.write("Lista vazia!<br/>");
+					}else{
+						current = head;
+						while(current){
+							if(current.element == x){
+								return index;
+							}
+							current = current.next;
+							index++;
+						}
+						return -1;
+					}
+				};
+				
+				this.removePosicao = function(x){
+					let current, index = 1, anterior = null, element;
+					if(x > length){
+						return -1;
+					}else{
+						current = head;
+						while(current){
+							if(index == x){
+								element = current.element;
+								if(anterior == null){
+									head = current.next;
+									break;
+								}else{
+									anterior.next = current.next;
+									break;
+								}
+							}
+							anterior = current;
+							current = current.next;
+							index++;
+						}
+						length--;
+						return element;
+					}
+				};
+				
+			}
+			
+			let lista, aux;
+			lista = new LinkedList();
+			document.write("Cria a lista.<br/>");
+			lista.escreve();
+			
+			document.write("<br/>Insere o elemento 10.<br/>");
+			lista.append(10);
+			lista.escreve();
+			document.write("<br/>Insere o elemento 12.<br/>");
+			lista.append(12);
+			lista.escreve();
+			document.write("<br/>Insere o elemento 15.<br/>");
+			lista.append(15);
+			lista.escreve();
+			document.write("<br/>Insere o elemento 25.<br/>");
+			lista.append(25);
+			lista.escreve();
+			
+			console.log(lista.size());
+			
+			document.write("<br/>Remove do início.<br/>");
+			aux = lista.removeInicial();
+			lista.escreve();
+			document.write("Removido: " + aux + "<br/><br/>");
+			
+			document.write("Insere o elemento 1 no início.<br/>");
+			lista.insereInicial(1);
+			lista.escreve();
+			
+			document.write("<br/>Insere o elemento 100 no início.<br/>");
+			lista.insereInicial(100);
+			lista.escreve();
+			
+			document.write("<br/>Posição do 12: " + lista.busca(12) + "<br/><br/>");
+			document.write("Posição do 25: " + lista.busca(25) + "<br/><br/>");
+			document.write("Posição do 3: " + lista.busca(3) + "<br/><br/>");
+			
+			document.write("Remove posição 3.<br/>");
+			aux = lista.removePosicao(3);			
+			lista.escreve();
+			document.write("Removido: " + aux + "<br/><br/>");
+			
+			document.write("Remove posição 1.<br/>");
+			aux = lista.removePosicao(1);
+			lista.escreve();
+			document.write("Removido: " + aux + "<br/><br/>");
+			
+			document.write("Remove posição 3.<br/>");
+			aux = lista.removePosicao(3);
+			lista.escreve();
+			document.write("Removido: " + aux + "<br/><br/>");
+			
+			document.write("Remove posição 3.<br/>");
+			aux = lista.removePosicao(3);
+			lista.escreve();
+			document.write("Removido: " + aux + "<br/><br/>");
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+
+			let vetor = [25, 57, 48, 37, 12, 92, 86, 33];
+			
+			function insercao(vt){
+				let cont = 1;
+				let aux;
+				
+				for(let i=1; i<vt.length; i++){
+					for(let j=0; j<i; j++){
+						if(vt[i] < vt[j]){
+							aux = vt[i];
+							for(let k=i; k>j; k--){
+								vt[k] = vt[k-1];
+							}
+							vt[j] = aux;
+						}
+					}
+				
+					document.write("<br/><br/>It: " + cont + " - " + vt);
+					cont++;
+				}
+			}
+			
+			insercao(vetor);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

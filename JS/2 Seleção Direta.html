@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf8">
+  <title>Minha primeira pagina HTML</title>
+  <script>
+    'use strict'; // Modo chato do JS - não deixa usar variavel sem declarar
+
+
+    let vet2 = [10, 20, 12, 5, 8, 15];
+
+    function SelecaoDireta(vet) {
+
+      for (let i = 0; i < vet.length - 1; i++) {
+        let min = i;
+
+        for (let j = i; j < vet.length; j++) {
+          if (vet[j] < vet[min]) {
+            min = j;
+          }
+        }
+        if (min != i) {
+          let aux = vet[i];
+          vet[i] = vet[min];
+          vet[min] = aux;
+        }
+      }
+    }
+
+    document.write('SeleçãoDireta' + '<br>');
+
+    console.time('SelecaoDireta');
+    SelecaoDireta(vet2);
+    console.timeEnd('SelecaoDireta');
+
+    for (let i = 0; i < vet2.length; i++) [
+      document.write(vet2[i] + ",")
+    ]
+    document.write('<br>' + '<br>');
+
+  </script>
+</head>
+
+<body>
+  <h1>Titulo</h1>
+  <p>Isto é um parágrafo</p>
+
+</body>
+
+</html>

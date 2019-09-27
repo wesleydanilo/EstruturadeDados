@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf8">
+        <title>Minha primeira pagina HTML</title>
+        <script>
+            'use strict'; // Modo chato do JS - não deixa usar variavel sem declarar
+
+            let vet3 = [10,20,12,5,8,15];
+
+            function InsercaoDireta (vet){
+              let x = vet.length;
+
+              for (let i = 1; i < x; i++){
+
+                for (let j = 0; j < i; j++){
+                  if (vet[i] < vet[j]){
+                    let aux = vet[i];
+                    for (let k = i; k > j; k--){
+                      vet[k] = vet[k - 1];
+                    }
+                    vet[j] = aux;
+                  }
+                }
+              }
+            }
+            
+            document.write('InserçãoDireta' + '<br>');
+                        
+            console.time('InsercaoDireta');
+            InsercaoDireta(vet3);
+            console.timeEnd('InsercaoDireta');
+
+            for (let i = 0; i < vet3.length; i++)[
+              document.write(vet3[i] + ",")
+            ]
+            
+            document.write('<br>' + '<br>');
+
+        </script>
+    </head>
+
+    <body>
+        <h1>Titulo</h1>
+        <p>Isto é um parágrafo</p>
+
+    </body>
+</html>

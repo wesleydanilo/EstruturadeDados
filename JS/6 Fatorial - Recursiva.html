@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf8">
+  <title>Minha primeira pagina HTML</title>
+  <script>
+    'use strict'; // Modo chato do JS - não deixa usar variavel sem declarar
+
+    function fatorial(num){
+      if (num < 0){
+        return -1;
+      } else if (num == 0){
+          return 1;
+        } else {
+          return (num * fatorial( num - 1));
+        }
+    }
+
+    let num = prompt("Número: ");
+    var result = fatorial(num);
+    document.write("Fatorial de " + num + " é: " + result);
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <h1></h1>
+  <p></p>
+
+</body>
+
+</html>

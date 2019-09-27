@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hash Lista Encadeada</title>
+</head>
+<body>
+    <script>
+        'use strict'; //declare para usar alguma variável
+
+        //Definindo estrutura da lista encadeada
+        function Lista(){
+            let Node = function(element){
+                this.element = element;
+                this.next = null;
+            };
+            let length = 0;
+            let head = null;
+            
+            this.insere = function(element){
+                let node = new Node(element), current;
+                if(head === null){
+                    head = node;
+                }else{
+                    current = head;
+                    while(current.next){
+                        current = current.next;
+                    }
+                    current.next = node;
+                }
+                length++;
+            };
+            
+            this.tamanho = function(){
+                return length;
+            };
+            
+            this.escreve = function(){
+                let current;
+                if(head === null){
+                    document.write("Lista vazia!<br/>");
+                }else{
+                    current = head;
+                    while(current){
+                        document.write(current.element + (current.next ? " -> " : "<br/>"));
+                        current = current.next;
+                    }
+                }
+            };            
+        }
+
+        //Hash
+        function hash(x, divisor = tamanho){
+            return x % divisor;
+        }
+        
+        //Atualiza a tabela de hash conforme for inserindo os valores
+        function updateTabela(insert, table = tabela){
+            let pos = hash(insert.charCodeAt(0));
+            if(table[pos] == undefined){
+                table[pos] = new Lista;
+                table[pos].insere(insert);
+            } else{
+                table[pos].insere(insert);
+            }
+        }
+
+        //Escreve a tabela
+        function mostraTabela(table = tabela){
+            for(let i = 0; i < table.length; i++){
+                if(table[i] == undefined){
+                    document.write(i + "|<br/>");
+                } else {
+                    document.write(i + "|-> ");
+                    table[i].escreve();
+                }
+            }
+        }
+
+        //Define o tamanho e pega os valores com o usuário para no final mostrar a tabela
+        let tamanho = 7;
+		let tabela = new Array(tamanho);
+        let novo;
+
+        do{
+            novo = prompt("Digite o valor a ser inserido ou '0' para sair: )");
+            if(novo != 0){
+                updateTabela(novo);
+            }
+        }while(novo != 0);
+
+        mostraTabela();
+			
+    </script>
+</body>
+</html>

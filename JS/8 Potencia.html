@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf8">
+  <title>Minha primeira pagina HTML</title>
+  <script>
+    'use strict'; // Modo chato do JS - não deixa usar variavel sem declarar
+
+    function Potencia(num, pot) {
+      if (pot == 1) {
+        return num;
+      } else if (pot > 1) {
+        return (num * Potencia(num, pot - 1));
+      }
+    }
+
+    let num = parseFloat(prompt("Número: "));
+    let pot = prompt("Potência: ");
+    var result = Potencia(num, pot);
+    document.write("Potencia de " + num + " elevado a " + pot + " é: " + result);
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Titulo</h1>
+  <p>Isto é um parágrafo</p>
+
+</body>
+
+</html>

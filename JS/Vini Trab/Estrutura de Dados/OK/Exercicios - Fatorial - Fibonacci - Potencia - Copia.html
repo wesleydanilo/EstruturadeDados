@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercicios</title>
+		<!--
+		<style type="text/css">
+			body { text-align: center; }
+			h1 { font-size: 50px; }
+		</style>
+		-->
+        <script>
+            'use strict'; //declare para usar alguma variável
+			
+			function fatorial(num){
+				if(num < 0){
+					return -1;
+				} else if (num == 0){
+					return 1;
+				} else {
+					return (num * fatorial(num -1));
+				}
+			}
+			
+			function fibonacci(num) {
+				if(num <= 0){
+					return "ERRO!";
+				}else if(num == 1 || num == 2){
+					return 1;
+				} else {
+					return fibonacci(num -1) + fibonacci(num - 2);
+				}
+			}
+			
+			function potencia(num, pot){
+				if(pot == 1){
+					return num;
+				} else {
+					return num * potencia(num, pot - 1);
+				}
+			}
+			
+			let numero = prompt("Número: ");
+			let pot = prompt("Potência: ");
+			
+			document.write("Fatorial de " + numero + " é: " + fatorial(numero));
+			document.write("<br/>");
+			document.write("Fibonacci de " + numero + " é: " + fibonacci(numero));
+			document.write("<br/>");
+			document.write("Potência de " + numero + " elevado a " + pot + " é: " + potencia(numero, pot));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

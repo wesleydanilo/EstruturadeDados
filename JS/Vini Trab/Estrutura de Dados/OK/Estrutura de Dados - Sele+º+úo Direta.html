@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+
+			let vetor = [25, 57, 48, 37, 12, 92, 86, 33];
+			
+			function selecao(vt){
+				let cont = 1;
+				let menor, aux;
+				for(let i=0; i<vt.length-1; i++){
+					menor = i;
+					for(let j=i; j<vt.length; j++){
+						if(vt[j] < vt[menor]){
+							menor = j;
+						}
+					}
+					aux = vt[i];
+					vt[i] = vt[menor];
+					vt[menor] = aux;
+				
+					document.write("<br/><br/>It: " + cont + " - " + vt);
+					cont++;
+				}
+			}
+			
+			selecao(vetor);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

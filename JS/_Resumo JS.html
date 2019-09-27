@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf8" />
+      <title>RESUMO PROVA</title>
+      <script>
+
+         'use strict'; // Modo "chato" do Javascript
+
+//ALERT / DOCUMENT.WRITE
+         alert('Hello World!'); // Caixa de atenção com o escrito
+            document.write('Hello World!'); // Escreve na pagina
+
+
+            let nome; // declaração de variável
+
+            nome = prompt('Qual é o seu nome?'); // Abre caixa de diálogo para escrever
+
+            alert('Olá, ' + nome + '!'); // Retorna caixa de atenção - Olá + o nome que o usuario escreveu
+            document.write('Qual é o seu nome?') 
+
+//DECLARAÇÃO DE VARIAVEIS
+
+            let n1, n2, M; // Declaração de varias variáveis na mesma linha
+            n1 parseFloat(prompt('Digite o primeiro numero:'));  // parseFloat - recebe ou converte em um numero flutuante ou REAL
+            n2 parseFloat(prompt('Digite o segundo numero:'));  // prompt - abre caixa de dialogo para escrever
+
+//IF (SE)
+
+                        let nome;
+           nome = prompt('Diga oi!');
+
+            if(nome == 'oi'){
+                alert('Parabéns, você acertou!');
+            }
+
+
+            //RESPOSTA ESCRITA NA CAIXA ALERT
+         //alert(ano + ' ' + resultado);
+            // (VAR + ' ESPAÇO ' + VAR)
+
+         // Usando template de string - MELHOR FORMA DE SE FAZER
+         alert(`${ano} ${resultado}`);
+
+         // (CRASE `${VAR} ESPAÇO ${VAR}`)
+         
+
+//OPERADORES LÓGICOS E MATEMATICOS
+            //     || "OU"
+            //     && "E"
+            //     !  "NOT"(NÃO LÓGICO)
+            //     >   "MAIOR"
+            //     <   "MENOR"
+            //     !=  "DIFERENTE"  25 != "25" = FALSE
+            //     !==  "DIFERENTE" 25 !== "25" = TRUE
+            //     >=   "MAIOR OU IGUAL A"
+            //     <=   "MENOR OU IGUAL A"
+            //     ==    "IGUAL"   25 == "25" = TRUE
+            //     ===   "EXTREMAMENTE IGUAL"   25 === "25" = FALSE
+            //OPERADORES MATEMÁTICOS
+            //     *  "MULTIPLICAÇÃO"
+            //     /   "DIVISÃO"
+            //     +   "SOMA"
+            //     -    "SUBTRAÇÃO"
+            //     %    "MOD - RESTO DA DIVISÃO"
+            // -------NÃO EXISTE A PARTE INTEIRA DA DIVISAO NO JAVASCRIPT---------
+            //     **    "EXPONENCIAÇÃO"  -  NUM**2 = NUM AO QUADRADO
+            //     math.sqrt     "RAIZ QUADRADA"
+         
+// LOOP JAVASCRIPT
+            //   FOR - PARA
+            //   WHILE  -  ENQUANTO
+            //   DO WHILE  -  FAÇA ENQUANTO
+            for(;;){ //Loop Eterno
+            //Este loop repete a pergunta ao usuario até ele informar um numero valido.
+            // IF CURTO
+            M = (n1 > n2) ? n1 : n2;
+            // var = (condição)? se sim : se não
+
+            //IF (SE)
+            let nome;
+           nome = prompt('Diga oi!');
+            if(nome == 'oi'){
+                alert('Parabéns, você acertou!');
+            }
+
+// Usando template de string - MELHOR FORMA DE SE FAZER
+            alert(`${ano} ${resultado}`);
+            // (CRASE `${VAR} ESPAÇO ${VAR}`)
+
+// PULAR LINHA '<br>'
+            document.write('<br>');
+// Traco Separador - horizontal ruler = régua horizontal
+            document.write('<hr>');
+
+// VETORES
+            // Criando um vetor com valores
+            let frutas = ['maçã', 'banana', 'pera', 'mamão'];
+            let carros = Array('Fusca', 'Brasília', 'Opala', 'Variant', 'Maverick');
+            let mistureba = [19, 'cachorro', undefined, -12.4, null, true];
+
+            // Criando vetores vazios
+            let vazio1 = [];
+            let vazio2 = Array();
+
+            // Quantos elementos há no vetor? length
+            document.write('No Vetor frutas tem: ' + frutas.length + '<br>');
+            document.write('No Vetor carros tem: ' + carros.length + '<br>');
+
+            // Listando todos os elementos de um vetor
+            for (let i = 0; i < carros.length; ++i) {
+               document.write(carros[i] + '<br>');
+            }
+            // Listando todos os elementos na ordem inversa
+            for (let j = carros.length - 1; j >= 0; --j) {
+               document.write(carros[j] + '<br>');
+            }
+            // Acessando diretamente o TERCEIRO elemento de carros
+            document.write('O terceiro elemento do vetor carros é ' + carros[2] + '<br>');
+            // Acessando diretamente o PRIMEIRO elemento de carros
+            document.write('O primeiro elemento do vetor carros é ' + carros[0]);
+
+            // Acrescentando um elemento ao final do vetor: push()
+            carros.push('Fiat 147');
+            vazio1.push(7);
+            console.log(carros);
+            console.log(vazio1);
+
+            // Acrescentando um elemento em uma posição específica: splice()
+               carros.splice(0, 0, 'Alpha Romeo');
+               // Novo carro na primeira posição
+               // 1º parâmetro: a posição desejada
+               // 2º parâmetro: quantos elementos queremos apagar
+               // 3º parâmetro: o que queremos que seja inserido
+               // Novo carro na QUARTA posição
+               carros.splice(3, 0, 'Delorean');
+
+            // Retirando um elemento da última posição: pop()
+               let ultimo = carros.pop();
+               document.write('O último carro da fila ERA ' + ultimo + '<br>');
+
+            // Retirando um elemento da primeira posição: shift()
+               let primeiro = carros.shift();
+               document.write('O primeiro elemento da fila ERA ' + primeiro + '<br>');
+
+            // Acrescentando um elemento na primeira posição: unshift()
+               carros.unshift('Lamborghini');
+               document.write('O novo primeiro elemento da fila é ' + carros[0] + '<br>');
+
+            // Procurando a posição de um elemento dentro do vetor: indexOf()
+               document.write('A posição do Fusca na fila é ' + carros.indexOf('Fusca') + '<br>');
+               document.write('A posição do Lamborghini na fila é ' + carros.indexOf('Lamborghini') + '<br>');
+               document.write('A posição da Ferrari na fila é ' + carros.indexOf('Ferrari') + ' (não tem)<br>');
+
+// FUNÇÕES
+            /* FUNÇÃO QUE NÃO RECEBE PARÂMETROS NEM RETORNA VALOR */
+               // A chamada pode vir ANTES da declaração da função
+               mensagemErro(); // Mesmo sem argumentos, os parênteses SÃO OBRIGATÓRIOS
+               
+               function mensagemErro() { // Mesmo sem argumentos, os parênteses SÃO OBRIGATÓRIOS
+                  alert('ERRO! Algo deu errado. Tente novamente.');
+               }
+
+            /* FUNÇÃO QUE RECEBE DOIS ARGUMENTOS E RETORNA A SOMA DELES */
+               // O retorno de valor é caracterizado pelo uso da palavra reservada return
+               function soma(n1, n2) { // Declaração da função
+                  return n1 + n2;
+               }
+               // Chamadas da função
+               let resultado = soma(23, 12); // resultado receberá 35
+               alert(soma(10, 30));  // 40
+               alert(soma(5, 4));    // 9
+               alert(soma(18, 31));  // 49
+
+            /* FUNÇÃO QUE RECEBE DOIS ARGUMENTOS E NÃO RETORNA VALOR ALGUM */
+               function repete(texto, vezes) { // Declaração da função
+                  for (let i = 1; i <= vezes; i++) {
+                  document.write(texto);
+                  }
+               }
+               // Chamadas da função
+               repete('*', 10);
+               repete('-', 15);
+               // A função repete() não retorna valor (não tem return),
+               // por isso, não pode ser atribuída a uma variável
+               // let rep = repete('X', 12); // Não dá certo
+
+            /* FUNÇÃO QUE RECEBE PARÂMETRO OPCIONAL */
+               // Caso haja parâmetros opcionais e não opcionais, aqueles devem vir ao final
+               function calc(n1, n2, op = '+') {
+               // O parâmetro op é opcional. Se não for informado na chamada da função,
+               // será assumido o valor '+'
+                  switch(op) {
+                     case '+':
+                        return n1 + n2;
+                        break;
+                     case '-':
+                        return n1 - n2;
+                        break;
+                     case '*':
+                        return n1 * n2;
+                        break;
+                     case '/':
+                        return n1 / n2;
+                        break;
+                     default:
+                        return NaN;
+                  }
+               }
+
+               let result;
+               result = calc(12, 20, '*'); // result conterá o resultado da multiplicação
+               result = calc(23, 7, '-');  // result conterá o resultado da subtração
+               result = calc(33, 89, '+'); // result conterá o resultado da soma
+               result = calc(77, 54);      // result também conterá o resultado da soma
+
+            /* FUNÇÃO COM PARÂMETROS DE RESTO */
+               // Os parâmetros de resto permitem que um número arbitrário de parâmetros
+               // seja passado à função. Esses parâmetros são capturados no chamado 
+               // ARGUMENTO DE RESTO, que é precedido por três pontos. O argumento de resto
+               // se comporta como um vetor
+               function soma(...nums) {
+                  let res = 0;
+                  for(let i = 0; i < nums.length; i++) {
+                     res += nums[i];
+                  }
+                  return res;
+               }      
+               // Chamadas da função
+               alert(soma(2, 44, 33, 90));
+               alert(soma(-7, 8, 12));
+               // IMPORTANTE: caso existam argumentos normais e argumentos de resto em uma função,
+               // este deve vir por último.
+               // Exemplos:
+               // function calculo(op, ...nums) {...} // Perfeito
+               // function calculo(...nums, op) {...} // Não funciona
+
+// STRINGS
+               // Strings delimitadas por acentos graves (backticks) podem
+               // exibir o valor de expressões Javascript válidas entre ${}
+                  let str3 = `Confúcio disse: ${str1} ${str2}`;
+                  let str4 = `2 + 2 = ${parseInt('2') + parseInt('2')}`;
+                     console.log(str1);
+                     console.log(str2);
+                     console.log(str3);
+                     console.log(str4);
+
+               // charAt(): retorna o caractere na posição passada
+                  console.log('str1.charAt(4): ' + str1.charAt(4));
+                  console.log('"Aeroporto".charAt(7): ' + "Aeroporto".charAt(7));
+
+               // concat(): emenda duas ou mais strings em uma terceira
+                  let ditado = str1.concat(' ', str2);
+                  console.log("str1.concat(' ', str2): " + ditado);
+
+               // indexOf(): retorna a primeira posição de uma substring dentro da string
+               // (ou -1, se não achar a substring)
+                  console.log('str1.indexOf("roupa"): ' + str1.indexOf("roupa"));
+                  console.log('str1.indexOf("camisa"): ' + str1.indexOf("camisa"));
+
+               // toUpperCase(): passa a string para maiúsculas
+                  let maiusc = str1.toUpperCase();
+                  console.log("str1.toUpperCase(): " + maiusc);
+                  console.log("'HaCk&ad0'.toUpperCase(): " + 'HaCk&ad0'.toUpperCase());
+
+               // toLowerCase(): passa a string para minúsculas
+                  let minusc = str1.toLowerCase();
+                  console.log("str1.toLowerCase(): " + minusc);
+                  console.log("'HaCk&ad0'.toLowerCase(): " + 'HaCk&ad0'.toLowerCase());
+
+               // repeat(): repete a string o número de vezes passado
+                  console.log('"01".repeat(33): ' + "01".repeat(33));
+                  console.log('"-".repeat(80): ' + "-".repeat(80));
+
+               // slice(): recorta uma parte da string, gerando outra. É necessário
+               // passar as posições de início e (opcionalmente) do fim do recorte
+                  let substring1 = str1.slice(14, 19);
+                  let substring2 = str1.slice(14);
+                     console.log('str1.slice(14, 19): ' + substring1);
+                     console.log('str1.slice(14); ' + substring2);
+
+               // split(): separa a string em pedaços, de acordo com o separador informado.
+               // Os pedaços gerados compõem um vetor
+                  let vet1 = str1.split(' ');
+                  let vet2 = str1.split('r');
+                  let vet3 = str1.split(/[Rr]/); // Expressão regular
+                     console.log("str1.split(' '): ");
+                     console.log(vet1);
+                     console.log("str1.split('r'): ");
+                     console.log(vet2);
+                     console.log("str1.split(/[Rr]/): ");
+                     console.log(vet3);
+
+               // includes(): retorna true caso a substring exista dentro de string
+                     console.log('str1: ' + str1);
+                     console.log("str1.includes('roeu'): " + str1.includes('roeu'));
+                     console.log("str1.includes('ruim'): " + str1.includes('ruim'));
+               // É possível especificar a partir de qual posição includes()
+               // irá efetuar a busca
+                     console.log("str1.includes('roeu', 12): " + str1.includes('roeu', 12));
+
+               // trim(): tira os espaços em branco no início e no final da string;
+                  let str5 = '      E viveram felizes para sempre     ';
+                     console.log(`->${str5}<-`);
+                     console.log(`str5.trim(): ->${str5.trim()}<-`);
+
+               // replace(): substitui uma parte de uma string (substring) por outra. Repare
+               // que, na sintaxe da função, a substring a ser substituida aparece entre barras
+                  let str6 = str1.replace('roupa', 'rapadura');
+                     console.log("str1.replace('roupa', 'rapadura'): " + str6);
+
+               // CARACTERES ESPECIAIS
+               // \n: gera uma quebra de linha (NÃO funciona com document.write())
+                     console.log('Primeira linha\nSegunda linha');
+                  alert('Primeira linha\nSegunda linha');
+
+               // \' e \": para usar aspas simples ou duplas dentro de strings delimitadas
+               // por elas mesmas
+                     console.log('Caixa d\'água');
+                     console.log("Não gosto da música \"O nome dela é Jenifer\"");
+
+               // \\: para escrever barras invertidas
+                     console.log('C:\\Windows\\System32\\dxd3.dll');
+
+// TABELAS E CSS no html - AULA 12
+               //Criar tabela, linhas, cores de fundo.
+               //Criar vetor para cada linha da tabela.
+               //Substituir um conteúdo de uma célula da tabela.
+
+// OBJETO
+               //Criando um Objeto vazio
+                  let objPessoa1 = {};
+               //Criando um Objeto
+                  let objPessoa = {
+                     nome: 'Feicibúquisson da Silva',
+                     dataNascimento: new Date(2011, 4, 20),
+                     sexo: 'M',
+                     'documento de identidade': '98.756.432-1',
+                     endereco: 'Rua do Sobe e Desce',
+                     numImovel: 1567,
+                     complemento: null,
+                     bairro: 'Centrão',
+                     municipio: 'Morro Alto de Cima',
+                     uf: 'MG',
+                     cep: '36888-000',
+                     telefone: '(36) 99871-9987',
+                     email: 'feicibuquisson@gmail.com'
+                  };
+               //Formas de exibir o conteúdo do Objeto
+                  // Exibir doc. identidade
+                  // Não é possível acessar essa propriedade com o ponto (.)
+                     document.write(objPessoa['documento de identidade'] + '<br>');
+                  // Exibir e-mail
+                     document.write(`${objPessoa['email']} <br>`);
+                  // Exibir nome
+                     document.write(objPessoa.nome + '<br>');
+                  // Exibir data de nascimento
+                     document.write(`${objPessoa.dataNascimento} <br>`);
+                     document.write(`${objPessoa.dataNascimento.toLocaleDateString('pt-BR')} <br>`); //CORRETO
+                  //document.write(pessoa); - exibe todo o conteúdo do OBJETO
+                     for(let prop in objPessoa) {
+                        if(objPessoa[prop] instanceof Date) {
+                           document.write(`${prop}: ${objPessoa[prop].toLocaleDateString('pt-BR')} <br>`);   
+                        }
+                        else {
+                           document.write(`${prop}: ${objPessoa[prop]} <br>`);
+                        }
+                  //document.write(prop + ': ' + objPessoa[prop] + '<br>');
+                     }
+               // Destruindo uma propriedade
+                  delete objPessoa2.apelido;
+               //Copiando uma tabela de Objeto, podendo alterar a copia sem mexer na original
+                     let obj1 = {
+                        nome: 'Peludinho',
+                        raca: 'Tomba Lata',
+                        cor: 'Preto',
+                        sexo: 'M',
+                        'nome do pai': 'Tom Tom',
+                        'nome da mae': 'Canina',
+                     };
+                     
+                     //let obj2 = obj1;
+                     let obj2 = Object.assign({}, obj1);
+
+                     obj2.nome = 'Maria';
+
+                     console.log(obj1.nome);
+                     console.log(obj2.nome);
+
+// CSS
+               //<!DOCTYPE html>
+               //<html lang="pt-br">
+                  //<head>
+                     //<meta charset="utf-8">
+                     <title>Minha primeira página HTML</title>
+
+                     <!-- Aqui é onde entra o CSS -->
+                     <style>
+                        table {
+                           background: rgb(211, 210, 210); /* Cor de fundo cinza claro */
+                           /* Retira o espaçamento entre as células */
+                           border-collapse: collapse; 
+                        }
+                        td, th {
+                           border: 1px solid black; /* borda preta sólida */
+                           /* Aumentar o espaço entre a borda e o texto */
+                           padding: 10px;
+                        }
+                        /* Regras de classe começam com um ponto (.) */
+                        .direita {
+                           text-align: right;
+                        }
+
+                     </style>
+                  //</head>
+
+// TABELA E MANIPULAÇÃO DOM
+               <body>
+                     <h1>Título</h1>
+                     <p>Isto é um parágrafo</p>
+
+                     <table id="carros">
+                        <tr> <!-- Linha de cabeçalho -->
+                           <th>Marca</th> <!-- Células da linha -->
+                           <th>Modelo</th>
+                           <th>Preço</th>
+                        </tr>
+                        <tr> <!-- Linha de dados (linha "normal") -->
+                           <td>Volkswagem</td>
+                           <td>Fusca</td>
+                           <td class="direita">$ 3500,00</td>
+                        </tr>
+                        <tr> <!-- Linha de dados (linha "normal") -->
+                           <td>Chevrolet</td>
+                           <td>Opala</td>
+                           <td class="direita">$ 10500,00</td>
+                        </tr>
+                     </table>
+
+                  </body>
+                  <script=>// DESCONSIDERE ESSE =
+                     
+                     'use strict'; // Modo chato do JS
+
+                     let tabela = document.getElementById('carros');
+                     let tbody = tabela.querySelector('tbody'); 
+                     let linha1 = tbody.querySelector('tr'); //cria um vetor com os valores do primeiro 'tr'
+
+                     console.log(linha1.children);
+
+                     document.querySelector('tr').children[2].textContent = 'VALOR'; //forma mais rapida de localizar um objeto e substitui-lo
+                     //localiza no documento o Primeiro 'tr' - o filho dele na posição 2 e substitui o texto.
+
+                     /*OUTRA FORMA DE FAZER CRIANDO UM VETOR COM O CONTEUDO DO QUE FOI PESQUISADO.*/
+                     //linha1.children[2].textContent = 'Valor';
+                     //procura no vetor da linha1 os filhos da posição 2 e substitui o valor.
+
+                     let linha2 = tabela.getElementsByTagName('tr')[1];
+                     // var     = procura na tabela os elementos com o nome 'tr' na posição 1 - e cria um vetor na variavel linha2
+                     
+                     console.log(linha2.children);
+                     
+                     linha2.children[0].innerText = '(Montadora desconhecida)'; //filho da linha2 na posição 0
+                     //.innerText   -substitui a string
+                  </script> 
+
+// MANIPULAÇÃO DOM HTML - Aula 14
+                  //Localizando obj no documento
+                  //Percorrendo DOM
+                  //Alterando cores, styles, textos.
+
+// DOM - MAIS MANIPULAÇÃO
+
+                     <head>
+                           <!-- Ajusta a acentuação -->
+                           <meta charset="utf8" />
+                           <title>Página-modelo HTML</title>
+
+                           <style>
+                              
+                              table {
+                                 border-collapse: collapse;
+                              }
+
+                              td, th {
+                                 border: 1px solid black;
+                              }
+
+                              #cabec {
+                                 background: lightblue;
+                              }
+
+                              .alin-dir {
+                                 text-align: right;
+                              }
+
+                           </style>
+
+                        </head>
+                        
+                        <body>
+                           <h1 id="cabec">Título da página</h1>
+                           <p>Isto é um parágrafo</p>
+                           <p>Isto é um parágrafo.</p>
+                           
+                           <table>
+                              <tr>
+                                 <th>Item</th>
+                                 <th>Preço/kg</th>
+                              </tr>
+                              <tr>
+                                 <td>maçã</td>
+                                 <td class="alin-dir">
+                                    8.50
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>banana</td>
+                                 <td class="alin-dir">
+                                    4.75
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>pera</td>
+                                 <td class="alin-dir">
+                                    9.80
+                                 </td>
+                              </tr>         
+                           </table>
+
+                        </body>
+
+                        script type="text/javascript"
+                     
+                           'use strict';
+                           
+                           /*
+
+                              1. Altere o texto do cabeçalho para "Tabela de preços"
+                              2. Coloque no primeiro parágrafo a quantia total necessária
+                                 (calculada em código) para comprar 1kg de cada fruta
+                              3. Coloque no segundo parágrafo o preço médio (calculado em 
+                                 código) das frutas
+                              4. Passe o nome das frutas da primeira coluna para maiúsculas
+                              5. Altere a cor do cabeçalho para amarelo (yellow)   
+
+                           */
+
+                           // 1. Altere o texto do cabeçalho para "Tabela de preços"
+                           let tituloPag = document.querySelector('#cabec'); // Opção: document.getElementById('cabec')
+                           tituloPag.innerText = 'Tabela de preços';
+
+                           //2. Coloque no primeiro parágrafo a quantia total necessária
+                           //   (calculada em código) para comprar 1kg de cada fruta
+
+                           let precos = document.querySelectorAll('.alin-dir');
+                           // Alternativa:
+                           // let precos = document.getElementsByClassName('alin-dir');
+
+                           let total = 0;
+                           for(let preco of precos) {
+                              total += parseFloat(preco.innerText);
+                           }
+                           
+                           // Obtendo os dois parágrafos de uma única vez em um único vetor
+                           let parags = document.getElementsByTagName('p');
+                           // Alternativa:
+                           // let parags = document.querySelectorAll('p');
+
+                           // 1º parágrafo (índice 0)
+                           parags[0].innerText = `Valor total requirido: ${total}`;
+
+                           // 3. Coloque no segundo parágrafo o preço médio (calculado em 
+                           // código) das frutas
+
+                           // 2º parágrafo (índice 1)
+                           let media = total / precos.length;
+                           // toFixed(): controla a quantidade de casas decimais exibidas
+                           parags[1].innerText = `Preço médio das frutas: ${media.toFixed(2)}`;
+
+                           // 4. Passe o nome das frutas da primeira coluna para maiúsculas
+
+                           // Selecionar a tabela
+                           let tabela = document.querySelector('table');
+                           // Alternativa:
+                           // let tabela.getElementsByTagName('tabela')[0];
+
+                           // Capturando todas as linhas da tabela
+                           let linhasTab = tabela.getElementsByTagName('tr');
+                           // Alternativa:
+                           // let linhasTab = tabela.querySelectorAll('tr');
+
+                           // for clássico pulando a primeira linha (linha de cabeçalho)
+                           // (Não queremos mexer na linha 0 de cabeçalho)
+                           for(let i = 1; i < linhasTab.length; i++) {
+                              let linha = linhasTab[i];
+                              
+                              // Capturando a primeira célula da linha
+                              let celula1 = linha.querySelector('td');
+                              // Alternativas:
+                              // let celula1 = linha.getElementsByTagName[0];
+                              // let celula1 = linha.children[0];
+                              // let celula1 = linha.firstChild;
+                              // let celula1 = linha.cells[0]; // Só funciona para tr
+                              
+                              // Passando (FINALMENTE!) o texto para maiúsculas 
+                              celula1.innerText = celula1.innerText.toUpperCase();
+                           }
+
+                           // 5. Altere a cor do cabeçalho para amarelo (yellow)
+                           // tituloPag.style.color = 'yellow'; // Não fica bom
+
+                           // Melhor mudar a cor do background
+                           tituloPag.style.background = 'yellow';
+
+// DOM - OUTRO DOM PROVA 2
+
+                           <body>
+                                 <h1>Título da página</h1>
+
+                                 <div>
+                                    <table>
+                                       <tr>
+                                          <th>Nº</th>
+                                          <th>Nome</th>
+                                          <th>E-mail</th>
+                                          <th>Telefone</th>
+                                          <th>Telefone</th>
+                                       </tr>
+                                       <tr>
+                                          <td id="lin1cel0">aaa</td>
+                                          <td id="lin1cel1">xxx</td>
+                                          <td id="lin1cel2">xxx</td>
+                                          <td id="lin1cel3">xxx</td>
+                                       </tr>
+                                       <tr>
+                                          <td id="lin2cel0">xxx</td>
+                                          <td id="lin2cel1">xxx</td>
+                                          <td id="lin2cel2">xxx</td>
+                                          <td id="lin2cel3">xxx</td>
+                                       </tr>
+                                       <tr>
+                                          <td id="lin3cel0">xxx</td>
+                                          <td id="lin3cel1">xxx</td>
+                                          <td id="lin3cel2">xxx</td>
+                                          <td id="lin3cel3">xxx</td>
+                                       </tr>
+                                       <tr>
+                                          <td id="lin4cel0">xxx</td>
+                                          <td id="lin4cel1">xxx</td>
+                                          <td id="lin4cel2">xxx</td>
+                                          <td id="lin4cel3">xxx</td>
+                                       </tr>
+                                    </table>
+                                 </div>
+                                 
+                              </body>
+                              script
+                           'use strict'; // Modo chato do JS
+
+                           function preencherContatos(vet) {
+                              vet.push({num: 1, nome: 'Alberico Álvares', email: 'alberico@gmail.com', telefone: '(16) 9999-9999'});
+                              vet.push({num: 2, nome: 'Benedita Borba', email: 'beneborba@hotmail.com', telefone: '(16) 8888-8888'});
+                              vet.push({num: 3, nome: 'Clésio Camargo', email: 'cle.camargo@yahoo.com', telefone: '(16) 7777-7777'});
+                              vet.push({num: 4, nome: 'Domênica Duarte', email: 'domenica@outlook.com.br', telefone: '(16) 6666-6666'});
+                           }
+
+                           let vetor = [];
+                           preencherContatos(vetor);
+                           console.log(vetor);
+
+                           for(let i = 0; i < vetor.length; i++) {
+                              document.getElementById(`lin${i+1}cel0`).innerText = vetor[i].num;
+                              document.getElementById(`lin${i+1}cel1`).innerText = vetor[i].nome;
+                              document.getElementById(`lin${i+1}cel2`).innerText = vetor[i].email
+                              document.getElementById(`lin${i+1}cel3`).innerText = vetor[i].telefone;
+                           } 
+
+                           document.querySelector('h1').innerText = 'Lista de Contatos';
+                           document.querySelector('body').style.background = 'black';
+                           let a = document.getElementById('lin1cel0').innerText = 'bbb';
+
+                           // OUTRA FORMA DE FAZER
+                           // let cabec = document.querySelector('h1');
+                           // cabec.innerText = 'Lista de Contatos';
+
+                           // let back = document.querySelector('body');
+                           // back.style.background = 'black';
+
+                           console.log(a);
+
+
+
+      </script>
+   </head>
+   <body>
+      <!-- Isto é um comentário HTML --> 
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+</html>

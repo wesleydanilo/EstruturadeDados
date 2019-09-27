@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercicios</title>
+		<!--
+		<style type="text/css">
+			body { text-align: center; }
+			h1 { font-size: 50px; }
+		</style>
+		-->
+        <script>
+            'use strict'; //declare para usar alguma variável
+			let vet = ["[", "[", "]", "(", "}", "[", "[", "{", "}", "]", "]", "]"];
+			
+			function expressao(vetor){
+				let pilha = [];
+				let aux;
+				let valido = "É Válida!";
+				for(let i = 0; i < vetor.length; i++){
+					if(vetor[i] == "(" || vetor[i] == "{" || vetor[i] == "["){
+						pilha.push(vetor[i]);
+						document.write(pilha + "<br/>");
+					} else if (vetor[i] == ")"){
+						document.write(vetor[i] + "<br/>");
+						aux = pilha.pop();
+						if(aux != "("){
+							valido = "Não é Válida!";
+							break;
+						}
+					} else if (vetor[i] == "}"){
+						document.write(vetor[i] + "<br/>");
+						aux = pilha.pop();
+						if(aux != "{"){
+							valido = "Não é Válida!";
+							break;
+						}
+					} else if (vetor[i] == "]"){
+						document.write(vetor[i] + "<br/>");
+						aux = pilha.pop();
+						if(aux != "["){
+							valido = "Não é Válida!";
+							break;
+						}
+					}
+				}
+				if(pilha.length != 0){
+					valido = "Não é Válida!";
+				}
+				document.write(valido);
+			}
+			
+			expressao(vet);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
