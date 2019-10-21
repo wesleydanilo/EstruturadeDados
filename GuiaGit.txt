@@ -1,0 +1,38 @@
+GUIA GIT:
+
+
+ver estado atual:
+git status
+
+
+adicionar alterações para fazer um commit:
+git add nomeDoArquivo
+ou
+para adicionar todas as alterações:
+git add .
+
+
+para realizar um commit depois de adicionada as alterações:
+git commit -m "mensagem"
+
+
+para recuperar as atualizações feitas pelos outros usuários:
+git pull
+
+
+para enviar suas alterações:
+git push
+
+
+
+OBS: para realizar um commit comum, podem ser executado os códigos nessa ordem
+(recomendo que use o git status depois de cada comando,
+
+para acompanhar o que esta fazendo)
+
+
+OBS2: caso ocorra um conflito durante esse processo,
+abra o arquivo em que houve o conflito e o altera para
+ficar da forma correta,
+salve e execute um novo commit.
+Caso tenha problemas, chame o supremo Deus do git (Murilo)
