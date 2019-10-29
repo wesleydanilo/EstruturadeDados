@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8" />
+    <title>HashingLinear</title>
+    <script>
+        const alfabeto = {
+            A: ["A", 1],
+            B: ["B", 2],
+            C: ["C", 3],
+            D: ["D", 4],
+            E: ["E", 5],
+            F: ["F", 6],
+            G: ["G", 7],
+            H: ["H", 8],
+            I: ["I", 9],
+            J: ["J", 10],
+            K: ["K", 11],
+            L: ["L", 12],
+            M: ["M", 13],
+            N: ["N", 14],
+            O: ["O", 15],
+            P: ["P", 16],
+            Q: ["Q", 17],
+            R: ["R", 18],
+            S: ["S", 19],
+            T: ["T", 20],
+            U: ["U", 21],
+            V: ["V", 22],
+            W: ["W", 23],
+            X: ["X", 24],
+            Y: ["Y", 25],
+            Z: ["Z", 26]
+        }
+
+        let vetorLinear = new Array(13);
+
+        function hashingLin(key, sequencia) {
+            let Confirmacao = false;
+            let resto = key[1] % sequencia.length;
+            let tamanhoRestante;
+            if (sequencia[resto]) {
+
+                if (resto == sequencia.length - 1) {
+                    tamanhoRestante = resto;
+                } else {
+                    tamanhoRestante = resto + 1;
+                }
+
+                while (!Confirmacao) {
+                    if (!sequencia[tamanhoRestante]) {
+                        sequencia[tamanhoRestante] = key[0];
+                        Confirmacao = true;
+                    } else {
+                        if (tamanhoRestante == sequencia.length - 1) {
+                            tamanhoRestante = 0;
+                        } else {
+                            tamanhoRestante++;
+                        }
+                    }
+                }
+
+            } else {
+                sequencia[resto] = key[0];
+            }
+        }
+
+        hashingLin(alfabeto.N, vetorLinear);
+        hashingLin(alfabeto.I, vetorLinear);
+        hashingLin(alfabeto.V, vetorLinear);
+        hashingLin(alfabeto.O, vetorLinear);
+        hashingLin(alfabeto.Z, vetorLinear);
+        hashingLin(alfabeto.U, vetorLinear);
+        hashingLin(alfabeto.A, vetorLinear);
+        hashingLin(alfabeto.E, vetorLinear);
+        hashingLin(alfabeto.F, vetorLinear);
+        hashingLin(alfabeto.R, vetorLinear);
+        hashingLin(alfabeto.B, vetorLinear);
+        hashingLin(alfabeto.L, vetorLinear);
+        console.log(vetorLinear);
+    </script>
+</head>
+
+
+</html>

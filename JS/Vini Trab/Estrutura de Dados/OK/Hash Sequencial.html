@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Hash Sequencial</title>
+	</head>
+	<body>
+		<script>
+			'use strict'; //declare para usar alguma variável
+			let tamanho = 13;
+			
+			let tabela = new Array(tamanho);
+			
+			function hash(x, divisor = tamanho){
+				return x % divisor;
+			}
+			function updateTabela(insert, table = tabela){
+				let pos = hash(insert.charCodeAt(0));
+				if(table[pos] == undefined){
+					table[pos] = insert;
+				} else{
+					let inserido = false
+					while(!inserido){
+						if(pos + 1 == tamanho){
+							pos = 0;
+						} else{
+							pos++;
+						}						
+						if(table[pos] == undefined){
+							table[pos] = insert;
+							inserido = true;
+						}
+					}
+				}
+				
+			}
+			
+			let cont = 0, novoElemento;
+			
+			do{
+				novoElemento = prompt("Digite o valor a ser inserido ou '0' para sair: )");
+				if(cont == tamanho){
+					alert("O vetor está cheio e não aceita mais inserções!");
+					novoElemento = 0;
+				} else if(novoElemento != 0){
+					updateTabela(novoElemento);
+					cont++;
+				}				
+			}while(novoElemento != 0);
+			
+			
+			document.write(tabela);
+		</script>
+	</body>
+</html>
