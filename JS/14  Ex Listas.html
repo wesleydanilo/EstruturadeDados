@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8" />
+    <title>Exercício de Listas</title>
+    <script>
+        function LinkedList() {
+            let Node = function (element) {
+                this.element = element;
+                this.next = null;
+            };
+            let length = 0;
+            let head = null;
+            this.append = function (element) {
+                let node = new Node(element), current;
+                if (head === null) {
+                    head = node;
+                } else {
+                    current = head;
+                    while (current.next) {
+                        current = current.next;
+                    }
+                    current.next = node;
+                }
+                length++;
+            };
+            this.size = function () {
+                return length;
+            };
+            this.toString = function () {
+                let current = head,
+                    string = '';
+                while (current) {
+                    string += current.element + (current.next ? ' -> ' : '');
+                    current = current.next;
+                }
+                return string;
+            };
+            this.removerPrimeiro = function () {
+                let removido = head;
+                head = head.next;
+                length--;
+                return removido.element;
+            }
+            this.inserir = (num) => {
+                let node = new Node(num), atual;
+                atual = head;
+                if (atual === null) {
+                    head = node;
+                } else {
+                    atual = node;
+                    atual.next = head;
+                    head = node;
+                }
+                length++
+            }
+            this.posicao = (element) => {
+                let current = head, posicao = 0;
+                while (current) {
+                    if (element == current.element) {
+                        return posicao;
+                    }
+                    current = current.next;
+                    posicao++;
+                }
+                return -1;
+            }
+            this.removerElemento = (posicao) => {
+                let atual = head, posicaoAtual = 0, auxiliar;
+                if (posicao > length - 1) {
+                    return -1;
+                }
+                if (posicao == 0) {
+                    auxiliar = head;
+                    head = auxiliar.next;
+                    length--
+                    let x = auxiliar.element;
+                    return x;
+                }
+
+                while (posicaoAtual < posicao - 1) {
+                    posicaoAtual++
+                    atual = atual.next;
+                }
+                auxiliar = atual.next;
+                atual.next = auxiliar.next;
+                length--
+                let x = auxiliar.element;
+                return x;
+            }
+        }
+
+        lista = new LinkedList();
+        lista.append(10);
+        lista.append(12);
+        lista.append(15);
+        console.log(lista.size());
+        console.log(lista.toString());
+        console.log(lista.removerPrimeiro());
+        lista.inserir(8);
+        console.log(lista.toString());
+        console.log(lista.posicao(9));
+        console.log(lista.removerElemento(0));
+    </script>
+</head>
+
+
+</html>
